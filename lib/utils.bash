@@ -67,7 +67,6 @@ install_version() {
   (
     mkdir -p "$install_path/bin"
     download_release "$version" "$release_file"
-    cp "$release_file" "$install_path/bin" || fail "Could not extract $release_file"
     chmod +x "$release_file"
 
     local tool_cmd
