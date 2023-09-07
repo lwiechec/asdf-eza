@@ -1,6 +1,6 @@
 <div align="center">
 
-# asdf-zoxide ![Build](https://github.com/lwiechec/asdf-eza/workflows/Build/badge.svg) ![Lint](https://github.com/lwiechec/asdf-eza/workflows/Lint/badge.svg)
+# asdf-eza ![Build](https://github.com/lwiechec/asdf-eza/workflows/Build/badge.svg) ![Lint](https://github.com/lwiechec/asdf-eza/workflows/Lint/badge.svg)
 
 [eza](https://github.com/eza-community/eza) plugin for the [asdf version manager](https://asdf-vm.com).
 
@@ -15,7 +15,7 @@
 
 # Dependencies
 
-- `bash`, `curl`, `tar`.
+- `bash`, `curl`.
 
 # Install
 
