@@ -37,17 +37,20 @@ download_release() {
   version="$1"
   filename="$2"
 
-  local arch; arch=$(uname -m | tr '[:upper:]' '[:lower:]')
-  local kernel; kernel=$(uname -s | tr '[:upper:]' '[:lower:]')
+  local arch
+  arch=$(uname -m | tr '[:upper:]' '[:lower:]')
+  local kernel
+  kernel=$(uname -s | tr '[:upper:]' '[:lower:]')
   case "${arch}-${kernel}" in
-  arm64-linux)
-    url="$GH_REPO/releases/download/v${version}/aarch64-unknown-linux-gnu-eza"
-    ;;
-  x86_64-linux)
-    url="$GH_REPO/releases/download/v${version}/x86_64-unknown-linux-gnu-eza"
-    ;;
-  *)
-    fail "Could not determine release URL"
+    arm64-linux)
+      url="$GH_REPO/releases/download/v${version}/aarch64-unknown-linux-gnu-eza"
+      ;;
+    x86_64-linux)
+      url="$GH_REPO/releases/download/v${version}/x86_64-unknown-linux-gnu-eza"
+      ;;
+    *)
+      fail "Could not determine release URL"
+      ;;
   esac
 
   echo "* Downloading $TOOL_NAME release $version..."
