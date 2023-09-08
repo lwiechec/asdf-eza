@@ -52,4 +52,6 @@ Contributions of any kind welcome! See the [contributing guide](contributing.md)
 
 # License
 
+`asdf-eza` is more almost direct copy of [asdf-zoxide](https://github.com/nyrst/asdf-zoxide) by [nyrst](https://github.com/nyrst); kudos!
+
 See [LICENSE](LICENSE) © [Siegfried Ehret](https://github.com/SiegfriedEhret/)
