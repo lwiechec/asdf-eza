@@ -15,7 +15,7 @@
 
 # Dependencies
 
-- `bash`, `curl`.
+- `bash`, `curl`, `tar`.
 
 # Install
 
