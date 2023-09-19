@@ -43,10 +43,10 @@ download_release() {
   kernel=$(uname -s | tr '[:upper:]' '[:lower:]')
   case "${arch}-${kernel}" in
     arm64-linux)
-      url="$GH_REPO/releases/download/v${version}/eza.exe_aarch64-unknown-linux-gnu.tar.gz"
+      url="$GH_REPO/releases/download/v${version}/eza_aarch64-unknown-linux-gnu.tar.gz"
       ;;
     x86_64-linux)
-      url="$GH_REPO/releases/download/v${version}/eza.exe_x86_64-unknown-linux-gnu.tar.gz"
+      url="$GH_REPO/releases/download/v${version}/eza_x86_64-unknown-linux-gnu.tar.gz"
       ;;
     *)
       fail "Could not determine release URL"
