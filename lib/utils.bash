@@ -3,6 +3,7 @@
 set -euo pipefail
 
 GH_REPO="https://github.com/eza-community/eza"
+GH_REPO_CBIN="https://github.com/cargo-bins/cargo-quickinstall"
 TOOL_NAME="eza"
 TOOL_TEST="eza --version"
 
@@ -50,6 +51,9 @@ download_release() {
       ;;
     x86_64-linux)
       url="$GH_REPO/releases/download/v${version}/eza_x86_64-unknown-linux-gnu.tar.gz"
+      ;;
+    arm64-darwin)
+      url="$GH_REPO_CBIN/releases/download/eza-${version}/eza-${version}-aarch64-apple-darwin.tar.gz"
       ;;
     *)
       fail "Could not determine release URL"
