@@ -73,11 +73,14 @@ install_version() {
     fail "asdf-$TOOL_NAME supports release installs only"
   fi
 
-  local release_file="$install_path/bin/$TOOL_NAME"
+  local release_bin="$install_path/bin"
+  local release_file="$release_bin/$TOOL_NAME"
+  local release_tar="$release_file.tar.gz"
   (
-    mkdir -p "$install_path/bin"
-    download_release "$version" "$release_file"
-    tar -xf "$release_file" -C "$install_path/bin" || fail "Could not extract $release_file"
+    mkdir -p "$release_bin"
+    download_release "$version" "$release_tar"
+    tar -xf "$release_tar" -C "$release_bin" || fail "Could not extract $release_file"
+    rm "$release_tar"
     chmod +x "$release_file"
 
     local tool_cmd
