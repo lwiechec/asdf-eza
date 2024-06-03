@@ -3,6 +3,7 @@
 set -euo pipefail
 
 GH_REPO="https://github.com/eza-community/eza"
+GH_REPO_CBIN="https://github.com/cargo-bins/cargo-quickinstall"
 TOOL_NAME="eza"
 TOOL_TEST="eza --version"
 
@@ -51,6 +52,9 @@ download_release() {
     x86_64-linux)
       url="$GH_REPO/releases/download/v${version}/eza_x86_64-unknown-linux-gnu.tar.gz"
       ;;
+    arm64-darwin)
+      url="$GH_REPO_CBIN/releases/download/eza-${version}/eza-${version}-aarch64-apple-darwin.tar.gz"
+      ;;
     *)
       fail "Could not determine release URL"
       ;;
@@ -69,11 +73,14 @@ install_version() {
     fail "asdf-$TOOL_NAME supports release installs only"
   fi
 
-  local release_file="$install_path/bin/$TOOL_NAME"
+  local release_bin="$install_path/bin"
+  local release_file="$release_bin/$TOOL_NAME"
+  local release_tar="$release_file.tar.gz"
   (
-    mkdir -p "$install_path/bin"
-    download_release "$version" "$release_file"
-    tar -xf "$release_file" -C "$install_path/bin" || fail "Could not extract $release_file"
+    mkdir -p "$release_bin"
+    download_release "$version" "$release_tar"
+    tar -xf "$release_tar" -C "$release_bin" || fail "Could not extract $release_file"
+    rm "$release_tar"
     chmod +x "$release_file"
 
     local tool_cmd
