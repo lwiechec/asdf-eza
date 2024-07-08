@@ -55,6 +55,9 @@ download_release() {
     arm64-darwin)
       url="$GH_REPO_CBIN/releases/download/eza-${version}/eza-${version}-aarch64-apple-darwin.tar.gz"
       ;;
+    x86_64-darwin)
+      url="$GH_REPO_CBIN/releases/download/eza-${version}/eza-${version}-x86_64-apple-darwin.tar.gz"
+      ;;
     *)
       fail "Could not determine release URL"
       ;;
