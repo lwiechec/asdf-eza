@@ -37,8 +37,8 @@ asdf install eza latest
 # Set a version globally (on your ~/.tool-versions file)
 asdf global eza latest
 
-# Now zoxide commands are available
-ezq --version
+# Now eza commands are available
+eza --version
 ```
 
 Check [asdf](https://github.com/asdf-vm/asdf) readme for more instructions on how to
