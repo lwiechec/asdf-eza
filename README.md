@@ -29,13 +29,13 @@ eza:
 
 ```shell
 # Show all installable versions
-asdf list-all eza
+asdf list all eza
 
 # Install specific version
 asdf install eza latest
 
 # Set a version globally (on your ~/.tool-versions file)
-asdf global eza latest
+asdf set -u eza latest
 
 # Now eza commands are available
 eza --version
